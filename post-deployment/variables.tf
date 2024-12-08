@@ -17,3 +17,7 @@ variable "region_secondary" {
 variable "bucket_prefix_name" {
 
 }
+
+variable "sqs_sns_name" {
+
+}
