@@ -22,3 +22,21 @@ variable "sqs_processing_sales_config" {
 variable "bucket_prefix_name" {
 
 }
+
+variable "sales_idempotency_table_name" {}
+
+variable "sales_table_name" {}
+
+variable "parameter_store_state_name" {}
+
+variable "ssm_vpc_id" {}
+
+variable "ssm_private_subnet_1" {}
+
+variable "ssm_private_subnet_2" {}
+
+variable "ssm_private_subnet_3" {}
+
+variable "ssm_alb" {}
+
+variable "ssm_listener" {}

@@ -13,3 +13,14 @@ sqs_processing_sales_config = {
   visibility_timeout_seconds    = 60
   dlq_redrive_max_receive_count = 4
 }
+
+sales_table_name             = "sales-workload"
+sales_idempotency_table_name = "sales-workload-idempotency"
+parameter_store_state_name   = "/sales/site/state"
+
+ssm_vpc_id           = "/linuxtips-multiregion/vpc/vpc_id"
+ssm_private_subnet_1 = "/linuxtips-multiregion/vpc/private/us-east-1a"
+ssm_private_subnet_2 = "/linuxtips-multiregion/vpc/private/us-east-1b"
+ssm_private_subnet_3 = "/linuxtips-multiregion/vpc/private/us-east-1c"
+ssm_alb              = "/sales-cluster/lb/internal/arn"
+ssm_listener         = "/sales-cluster/lb/internal/listener"
