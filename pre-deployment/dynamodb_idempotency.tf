@@ -14,8 +14,8 @@ resource "aws_dynamodb_table" "idempotency" {
   }
 
   // DynamoDB Streams
-  #stream_enabled   = true
-  #stream_view_type = "NEW_AND_OLD_IMAGES"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
 
   point_in_time_recovery {
     enabled = lookup(var.dynamodb_idempotency, "point_in_time_recovery")
@@ -84,4 +84,15 @@ resource "aws_appautoscaling_policy" "idempotency_write" {
     target_value = lookup(var.dynamodb_idempotency, "write_autoscale_threshold")
   }
 
+}
+
+resource "aws_dynamodb_table_replica" "idempotency" {
+  provider = aws.secondary
+
+  global_table_arn = aws_dynamodb_table.idempotency.arn
+
+  depends_on = [
+    aws_appautoscaling_policy.idempotency_read,
+    aws_appautoscaling_policy.idempotency_write
+  ]
 }
