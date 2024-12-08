@@ -40,3 +40,5 @@ variable "ssm_private_subnet_3" {}
 variable "ssm_alb" {}
 
 variable "ssm_listener" {}
+
+variable "cluster_name" {}
