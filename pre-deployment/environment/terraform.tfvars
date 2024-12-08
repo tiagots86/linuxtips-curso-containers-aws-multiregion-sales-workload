@@ -21,3 +21,18 @@ dynamodb_idempotency = {
   write_max                 = 100
   write_autoscale_threshold = 80
 }
+
+dynamodb_sales = {
+  name         = "sales-workload"
+  billing_mode = "PROVISIONED"
+
+  point_in_time_recovery = true
+
+  read_min                 = 10
+  read_max                 = 100
+  read_autoscale_threshold = 80
+
+  write_min                 = 10
+  write_max                 = 100
+  write_autoscale_threshold = 80
+}

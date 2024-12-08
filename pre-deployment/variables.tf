@@ -36,3 +36,20 @@ variable "dynamodb_idempotency" {
   })
 }
 
+variable "dynamodb_sales" {
+  type = object({
+    name                   = string
+    billing_mode           = string
+    point_in_time_recovery = bool
+
+    read_min                 = number
+    read_max                 = number
+    read_autoscale_threshold = number
+
+    write_min                 = number
+    write_max                 = number
+    write_autoscale_threshold = number
+
+  })
+}
+
