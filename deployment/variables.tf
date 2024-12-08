@@ -18,3 +18,7 @@ variable "sqs_processing_sales_config" {
   })
 
 }
+
+variable "bucket_prefix_name" {
+  
+}
