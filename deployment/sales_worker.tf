@@ -17,7 +17,7 @@ module "sales_worker" {
 
   container_image = "fidelissauro/sales-worker:latest"
 
-  use_lb = false
+  use_alb = false
 
   service_task_execution_role = aws_iam_role.main.arn
 
