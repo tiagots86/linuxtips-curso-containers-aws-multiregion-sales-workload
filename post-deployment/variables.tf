@@ -2,10 +2,6 @@ variable "project_name" {
 
 }
 
-variable "region" {
-
-}
-
 variable "region_primary" {
 
 }
@@ -18,6 +14,4 @@ variable "bucket_prefix_name" {
 
 }
 
-variable "sqs_sns_name" {
-
-}
+variable "sqs_sns_name" {}
